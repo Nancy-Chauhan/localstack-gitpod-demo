@@ -3,9 +3,8 @@ image:
 
 tasks:
   - name: Initialise
-    init: |
-      bash ${GITPOD_REPO_ROOT}/bin/init.sh > /tmp/init.log 2>&1
-      gp sync-done init
+    init: gp sync-done init
+    command: bash ${GITPOD_REPO_ROOT}/bin/init.sh 
 
   - name: Run
     init: gp sync-await init
